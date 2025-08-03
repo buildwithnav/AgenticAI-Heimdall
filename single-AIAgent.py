@@ -19,7 +19,7 @@ async def agentAI():
     assistant = AssistantAgent(name="assistant", model_client=openai_model_client)
 
     #Calling .run_stream method to execute our query ; Console -> will console the results and since used under async function we need to use await keyword
-    await Console(assistant.run_stream(task="Capital of India?"))
+    await Console(assistant.run_stream(task="Explain astronomy?"))
     #.close() method will terminate the session (so that token gets freed up)
     await openai_model_client.close()
 
