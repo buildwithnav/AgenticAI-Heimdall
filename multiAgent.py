@@ -25,6 +25,7 @@ async def multiAgent():
     agent2 = AssistantAgent(name="Student", model_client=openai_model_client, system_message="You are a student, who is smart and curious. Make sure to ask again if you did not understand a concept")
 
     # 'team' is an object of RoundRobinGroupChat from AutoGen, which acts like a group chat ; we will execute 'team' agent here
+    # 'termination_condition' --> MaxMessageTermination
     team = RoundRobinGroupChat(participants=[agent1,agent2], termination_condition=MaxMessageTermination(max_messages=6))
 
     #Calling .run_stream method to execute our query ; Console -> will console the results and since used under async function we need to use await keyword

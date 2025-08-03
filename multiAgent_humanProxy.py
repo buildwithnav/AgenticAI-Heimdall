@@ -15,7 +15,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 async def aiAgent():
 
-    model_client = OpenAIChatCompletionClient(model='gpt-4oC')
+    model_client = OpenAIChatCompletionClient(model='gpt-4o')
     agent = AssistantAgent(name="Math_Teacher",
                    model_client=model_client,
                    system_message="You are maths teacher and very passionate about it." 
